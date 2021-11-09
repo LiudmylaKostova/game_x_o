@@ -1,8 +1,7 @@
 import styles from "./Board.module.css";
 import Cell from "../cell/Cell.js";
 
-const Board = ({ cells, click }) => {
-  // console.log(cells);
+const Board = ({ cells, click, winner }) => {
   return (
     <div className={styles.wrapper}>
       {cells.map((cell, index) => {
@@ -11,7 +10,7 @@ const Board = ({ cells, click }) => {
             key={index}
             value={cell}
             onClick={() => click(index)}
-            disable={cell ? true : false}
+            disable={cell || winner ? true : false}
           />
         );
       })}

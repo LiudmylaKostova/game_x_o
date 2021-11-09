@@ -1,7 +1,9 @@
-import GameLogic from "./components/gameLogic/GameLogic";
+// import GameLogicUseState from "./components/gameLogic/GameLogicUseState";
+import GameLogicUseReducer from "./components/gameLogic/GameLogicUseReducer";
 
 function App() {
-  return <GameLogic />;
+  // return <GameLogicUseState />;
+  return <GameLogicUseReducer />;
 }
 
 export default App;
