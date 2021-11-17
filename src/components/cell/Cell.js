@@ -1,4 +1,4 @@
-import styles from "./Cell.module.css";
+import styles from "./cell.module.css";
 
 const Cell = ({ onClick, value, disable }) => {
   return (

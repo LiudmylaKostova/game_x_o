@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./GameLogic.module.css";
+import styles from "./game-logic.module.css";
 import Board from "../board/Board";
 import { chooseWinner } from "../../chooseWinner";
 import { showDraw } from "../../chooseWinner";

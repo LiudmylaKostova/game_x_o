@@ -1,6 +1,6 @@
 import React, { useCallback, useReducer } from "react";
-import styles from "./GameLogic.module.css";
-import Board from "../board/Board";
+import styles from "./game-logic.module.css";
+import Board from "../board/board";
 import { chooseWinner } from "../../chooseWinner";
 import { showDraw } from "../../chooseWinner";
 
@@ -48,19 +48,23 @@ const GameLogicUseReducer = () => {
     dispatch({ type: "reset" });
   }, [dispatch]);
 
+  let status;
+  if (state.winner || state.draw) {
+    status = "Winner is " + (state.winner || state.draw);
+    console.log(status);
+  } else {
+    status = "Next player: " + (state.step % 2 === 0 ? "X" : "0");
+    console.log(status);
+  }
+
   return (
     <>
-      {state.winner || state.draw ? (
-        <div className={styles.box}>
-          <p className={styles.descr}>
-            Winner is {state.winner} {state.draw} <br /> Let's play
-            <span className={styles.text}>NAUGHTS and CROSSES</span> again!
-          </p>
-          <button className={styles.btn} onClick={() => resetGame()}>
-            Click me
-          </button>
-        </div>
-      ) : null}
+      <div className={styles.box}>
+        <p className={styles.descr}>{status}</p>
+        <button className={styles.btn} onClick={() => resetGame()}>
+          Click me
+        </button>
+      </div>
       <Board cells={state.board} click={handleClick} winner={state.winner} />
     </>
   );

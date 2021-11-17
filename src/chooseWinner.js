@@ -11,12 +11,12 @@ export const chooseWinner = (cells) => {
   ];
 
   for (let i = 0; i < lines.length; i++) {
-    let winnerIsX =
+    const winnerIsX =
       cells[lines[i][0]] === "x" &&
       cells[lines[i][1]] === "x" &&
       cells[lines[i][2]] === "x";
 
-    let winnerIs0 =
+    const winnerIs0 =
       cells[lines[i][0]] === "0" &&
       cells[lines[i][1]] === "0" &&
       cells[lines[i][2]] === "0";
@@ -38,5 +38,6 @@ export const showDraw = (cells) => {
     return "D";
   } else {
     console.log("keep playing :)");
+    return undefined;
   }
 };

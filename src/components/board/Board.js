@@ -1,5 +1,5 @@
-import styles from "./Board.module.css";
-import Cell from "../cell/Cell.js";
+import styles from "./board.module.css";
+import Cell from "../cell/cell.js";
 
 const Board = ({ cells, click, winner }) => {
   return (
